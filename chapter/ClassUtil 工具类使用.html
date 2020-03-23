@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>原生 Mybatis 编码方式 · TobaccoCloud</title>
+        <title>ClassUtil 工具类使用 · TobaccoCloud</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="ClassUtil 工具类使用.html" />
     
-    
-    <link rel="prev" href="分页查询.html" />
+    <link rel="prev" href="原生 Mybatis 编码方式.html" />
     
 
     </head>
@@ -491,7 +489,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.4" data-path="原生 Mybatis 编码方式.html">
+        <li class="chapter " data-level="1.6.4" data-path="原生 Mybatis 编码方式.html">
             
                 <a href="原生 Mybatis 编码方式.html">
             
@@ -504,7 +502,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="ClassUtil 工具类使用.html">
+        <li class="chapter active" data-level="1.6.5" data-path="ClassUtil 工具类使用.html">
             
                 <a href="ClassUtil 工具类使用.html">
             
@@ -662,7 +660,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >原生 Mybatis 编码方式</a>
+        <a href=".." >ClassUtil 工具类使用</a>
     </h1>
 </div>
 
@@ -677,30 +675,15 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x539F;&#x751F;-mybatis-&#x7F16;&#x7801;&#x65B9;&#x5F0F;">&#x539F;&#x751F; Mybatis &#x7F16;&#x7801;&#x65B9;&#x5F0F;</h1>
-<p>&#x672C;&#x6846;&#x67B6;&#x6301;&#x4E45;&#x5316;&#x90E8;&#x5206;&#x4F7F;&#x7528; &#x901A;&#x7528; Mapper&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x57FA;&#x672C;&#x7684;&#x589E;&#x5220;&#x6539;&#x67E5;&#x3002;&#x5982;&#x679C;&#x4E1A;&#x52A1;&#x590D;&#x6742;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x7F16;&#x5199; SQL&#xFF0C;&#x672C;&#x6846;&#x67B6;&#x4E5F;&#x652F;&#x6301;&#x539F;&#x751F; Mybatis &#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x3002;</p>
-<p>1 xxxMapper.xml &#x4E2D;&#x7F16;&#x5199;&#x8BED;&#x53E5;</p>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectAllData&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;BaseResultMap&quot;</span>&gt;</span>
-      select ROW_ID,LABEL,PHOTO_PATH,CREATED_BY,CREATED_TIME,LAST_UPD_BY,LAST_UPD_TIME
-      from md_demo_base
-<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+                                <h1 id="classutil-&#x5DE5;&#x5177;&#x7C7B;&#x4F7F;&#x7528;">ClassUtil &#x5DE5;&#x5177;&#x7C7B;&#x4F7F;&#x7528;</h1>
+<p>&#x4F7F;&#x7528; ClassUtil &#x5DE5;&#x5177;&#x7C7B;&#x4E2D;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#x65F6;</p>
+<pre><code class="lang-java">String name = ClassUtil.getPropertyName(DemoBase.class, DemoBase::getLabel);
 </code></pre>
-<p>2 xxxMapper.java &#x58F0;&#x660E;&#x540C;&#x540D;&#x65B9;&#x6CD5;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DemoBaseMapper</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mapper</span>&lt;<span class="hljs-title">DemoBase</span>&gt; </span>{
-    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;DemoBase&gt; <span class="hljs-title">selectAllData</span><span class="hljs-params">()</span></span>;
-}
+<p>&#x51FA;&#x73B0;&#x9519;&#x8BEF;</p>
+<pre><code class="lang-java">java.lang.ClassCastException: com.neusoft.tobaccocloud.demo.base.entity.DemoBase$ByteBuddy$mUPGXxwx cannot be cast to com.neusoft.tobaccocloud.demo.base.entity.DemoBase
 </code></pre>
-<p>3 xxxService.java &#x8C03;&#x7528; xxxMapper.java</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;DemoBase&gt; <span class="hljs-title">selectAllData</span><span class="hljs-params">()</span></span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.mapper.selectAllData();
-}
-</code></pre>
-<p>4 xxxController.java &#x8C03;&#x7528; xxxService.java</p>
-<pre><code class="lang-java"><span class="hljs-meta">@GetMapping</span>(value = <span class="hljs-string">&quot;/selectAllData&quot;</span>)
-<span class="hljs-function"><span class="hljs-keyword">public</span> Result <span class="hljs-title">selectAllData</span><span class="hljs-params">()</span></span>{
-    <span class="hljs-keyword">return</span> ResultUtil.converter(demoBaseService.selectAllData());
-}
-</code></pre>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6848;</p>
+<p>&#x5173;&#x95ED; Spring Boot &#x5F00;&#x53D1;&#x70ED;&#x90E8;&#x7F72;</p>
 
                                 
                                 </section>
@@ -728,14 +711,10 @@
 
             
                 
-                <a href="分页查询.html" class="navigation navigation-prev " aria-label="Previous page: 分页查询">
+                <a href="原生 Mybatis 编码方式.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 原生 Mybatis 编码方式">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="ClassUtil 工具类使用.html" class="navigation navigation-next " aria-label="Next page: ClassUtil 工具类使用">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -744,7 +723,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"原生 Mybatis 编码方式","level":"1.6.4","depth":2,"next":{"title":"ClassUtil 工具类使用","level":"1.6.5","depth":2,"path":"chapter/ClassUtil 工具类使用.md","ref":"chapter/ClassUtil 工具类使用.md","articles":[]},"previous":{"title":"分页查询","level":"1.6.3","depth":2,"path":"chapter/分页查询.md","ref":"chapter/分页查询.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Molln","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TobaccoCloud","gitbook":"*"},"file":{"path":"chapter/原生 Mybatis 编码方式.md","mtime":"2020-02-11T04:46:09.367Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-23T02:48:01.112Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ClassUtil 工具类使用","level":"1.6.5","depth":2,"next":{"title":"代码迁移","level":"1.7","depth":1,"ref":"","articles":[{"title":"框架比较","level":"1.7.1","depth":2,"path":"chapter/代码迁移.md","ref":"chapter/代码迁移.md","articles":[]},{"title":"Dubbo Parent 工程迁移","level":"1.7.2","depth":2,"path":"chapter/Dubbo Parent 工程迁移.md","ref":"chapter/Dubbo Parent 工程迁移.md","articles":[]},{"title":"Dubbo API 工程迁移","level":"1.7.3","depth":2,"path":"chapter/Dubbo API 工程迁移.md","ref":"chapter/Dubbo API 工程迁移.md","articles":[]},{"title":"Dubbo Service 工程迁移","level":"1.7.4","depth":2,"path":"chapter/Dubbo Service 工程迁移.md","ref":"chapter/Dubbo Service 工程迁移.md","articles":[]},{"title":"Dubbo Web 工程迁移","level":"1.7.5","depth":2,"path":"chapter/Dubbo Web 工程迁移.md","ref":"chapter/Dubbo Web 工程迁移.md","articles":[]},{"title":"neusoft-javaee-api 迁移说明","level":"1.7.6","depth":2,"path":"chapter/neusoft-javaee-api 迁移说明.md","ref":"chapter/neusoft-javaee-api 迁移说明.md","articles":[]}]},"previous":{"title":"原生 Mybatis 编码方式","level":"1.6.4","depth":2,"path":"chapter/原生 Mybatis 编码方式.md","ref":"chapter/原生 Mybatis 编码方式.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Molln","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TobaccoCloud","gitbook":"*"},"file":{"path":"chapter/ClassUtil 工具类使用.md","mtime":"2020-03-10T09:50:10.086Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-23T02:48:01.112Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
