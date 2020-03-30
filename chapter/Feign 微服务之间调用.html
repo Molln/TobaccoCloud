@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>lombok · TobaccoCloud</title>
+        <title>Feign 微服务之间调用 · TobaccoCloud</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="ID 生成.html" />
     
-    
-    <link rel="prev" href="异常.html" />
+    <link rel="prev" href="多数据源.html" />
     
 
     </head>
@@ -200,7 +198,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.4" data-path="lombok.html">
+        <li class="chapter " data-level="1.3.4" data-path="lombok.html">
             
                 <a href="lombok.html">
             
@@ -530,7 +528,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.7" data-path="Feign 微服务之间调用.html">
+        <li class="chapter active" data-level="1.6.7" data-path="Feign 微服务之间调用.html">
             
                 <a href="Feign 微服务之间调用.html">
             
@@ -688,7 +686,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >lombok</a>
+        <a href=".." >Feign 微服务之间调用</a>
     </h1>
 </div>
 
@@ -703,95 +701,81 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="lombok">lombok</h1>
-<h2 id="&#x4E00;-&#x7B80;&#x4ECB;">&#x4E00; &#x7B80;&#x4ECB;</h2>
-<p>Lombok&#x80FD;&#x4EE5;&#x7B80;&#x5355;&#x7684;&#x6CE8;&#x89E3;&#x5F62;&#x5F0F;&#x6765;&#x7B80;&#x5316;java&#x4EE3;&#x7801;&#xFF0C;&#x63D0;&#x9AD8;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x7684;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x3002;&#x4F8B;&#x5982;&#x5F00;&#x53D1;&#x4E2D;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x5199;&#x7684;javabean&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x82B1;&#x65F6;&#x95F4;&#x53BB;&#x6DFB;&#x52A0;&#x76F8;&#x5E94;&#x7684;getter/setter&#xFF0C;&#x4E5F;&#x8BB8;&#x8FD8;&#x8981;&#x53BB;&#x5199;&#x6784;&#x9020;&#x5668;&#x3001;equals&#x7B49;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E14;&#x9700;&#x8981;&#x7EF4;&#x62A4;&#xFF0C;&#x5F53;&#x5C5E;&#x6027;&#x591A;&#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x5927;&#x91CF;&#x7684;getter/setter&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E9B;&#x663E;&#x5F97;&#x5F88;&#x5197;&#x957F;&#x4E5F;&#x6CA1;&#x6709;&#x592A;&#x591A;&#x6280;&#x672F;&#x542B;&#x91CF;&#xFF0C;&#x4E00;&#x65E6;&#x4FEE;&#x6539;&#x5C5E;&#x6027;&#xFF0C;&#x5C31;&#x5BB9;&#x6613;&#x51FA;&#x73B0;&#x5FD8;&#x8BB0;&#x4FEE;&#x6539;&#x5BF9;&#x5E94;&#x65B9;&#x6CD5;&#x7684;&#x5931;&#x8BEF;&#x3002;</p>
-<p>Lombok&#x80FD;&#x901A;&#x8FC7;&#x6CE8;&#x89E3;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x81EA;&#x52A8;&#x4E3A;&#x5C5E;&#x6027;&#x751F;&#x6210;&#x6784;&#x9020;&#x5668;&#x3001;getter/setter&#x3001;equals&#x3001;hashcode&#x3001;toString&#x65B9;&#x6CD5;&#x3002;&#x51FA;&#x73B0;&#x7684;&#x795E;&#x5947;&#x5C31;&#x662F;&#x5728;&#x6E90;&#x7801;&#x4E2D;&#x6CA1;&#x6709;getter&#x548C;setter&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x7684;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x4E2D;&#x6709;getter&#x548C;setter&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x7701;&#x53BB;&#x4E86;&#x624B;&#x52A8;&#x91CD;&#x5EFA;&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#x7684;&#x9EBB;&#x70E6;&#xFF0C;&#x4F7F;&#x4EE3;&#x7801;&#x770B;&#x8D77;&#x6765;&#x66F4;&#x7B80;&#x6D01;&#x4E9B;&#x3002;</p>
-<h2 id="&#x4E8C;-&#x5B98;&#x7F51;">&#x4E8C; &#x5B98;&#x7F51;</h2>
-<p><a href="https://projectlombok.org/download" target="_blank">https://projectlombok.org/download</a></p>
-<h2 id="&#x4E09;-&#x5F15;&#x5165;">&#x4E09; &#x5F15;&#x5165;</h2>
-<pre><code class="lang-xml"><span class="hljs-comment">&lt;!-- Lombok &#x63D2;&#x4EF6;&#xFF1A;&#x57FA;&#x4E8E;&#x6CE8;&#x89E3;&#x81EA;&#x52A8;&#x751F;&#x6210; set/get/&#x6784;&#x9020;&#x5668;&#x63D2;&#x4EF6;&#x3002;&#xFF08;&#x7248;&#x672C;&#x7531; spring-boot-dependencies &#x4EF2;&#x88C1;&#xFF09; --&gt;</span>
-<span class="hljs-comment">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;</span>
+                                <h1 id="feign-&#x5FAE;&#x670D;&#x52A1;&#x4E4B;&#x95F4;&#x8C03;&#x7528;">Feign &#x5FAE;&#x670D;&#x52A1;&#x4E4B;&#x95F4;&#x8C03;&#x7528;</h1>
+<h2 id="&#x4E00;-&#x4ECB;&#x7ECD;">&#x4E00; &#x4ECB;&#x7ECD;</h2>
+<p>&#x5B98;&#x7F51;&#x89E3;&#x91CA;&#xFF1A;</p>
+<p><a href="http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign" target="_blank">http://projects.spring.io/spring-cloud/spring-cloud.html#spring-cloud-feign</a></p>
+<p>Feign &#x662F;&#x4E00;&#x4E2A;&#x58F0;&#x660E;&#x5F0F; WebService &#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x4F7F;&#x7528; Feign &#x80FD;&#x8BA9;&#x7F16;&#x5199; Web Service &#x5BA2;&#x6237;&#x7AEF;&#x66F4;&#x52A0;&#x7B80;&#x5355;, &#x5B83;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4E0A;&#x9762;&#x6DFB;&#x52A0;&#x6CE8;&#x89E3;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x652F;&#x6301; JAX-RS &#x6807;&#x51C6;&#x7684;&#x6CE8;&#x89E3;&#x3002;Feign &#x4E5F;&#x652F;&#x6301;&#x53EF;&#x62D4;&#x63D2;&#x5F0F;&#x7684;&#x7F16;&#x7801;&#x5668;&#x548C;&#x89E3;&#x7801;&#x5668;&#x3002;Spring Cloud&#x5BF9;Feign&#x8FDB;&#x884C;&#x4E86;&#x5C01;&#x88C5;&#xFF0C;&#x4F7F;&#x5176;&#x652F;&#x6301;&#x4E86; Spring MVC &#x6807;&#x51C6;&#x6CE8;&#x89E3;&#x548C; HttpMessageConverters &#x3002;Feign &#x53EF;&#x4EE5;&#x4E0E; Eureka &#x548C; Ribbon &#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x4EE5;&#x652F;&#x6301;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x3002;</p>
+<h2 id="&#x4E8C;-&#x5F00;&#x53D1;&#x6B65;&#x9AA4;">&#x4E8C; &#x5F00;&#x53D1;&#x6B65;&#x9AA4;</h2>
+<h3 id="1-&#x670D;&#x52A1;&#x7AEF;&#x5F00;&#x53D1;">1 &#x670D;&#x52A1;&#x7AEF;&#x5F00;&#x53D1;</h3>
+<p>&#x670D;&#x52A1;&#x7AEF;&#x6B63;&#x5E38;&#x5F00;&#x53D1; Controller&#xFF0C;Service &#x7B49;&#x7EC4;&#x4EF6;&#xFF0C;&#x786E;&#x4FDD;&#x6B63;&#x5E38;&#x8C03;&#x7528;&#x65E0;&#x95EE;&#x9898;</p>
+<h3 id="2-feign-&#x5BA2;&#x6237;&#x7AEF;&#x5F00;&#x53D1;">2 Feign &#x5BA2;&#x6237;&#x7AEF;&#x5F00;&#x53D1;</h3>
+<p>Feign &#x5BA2;&#x6237;&#x7AEF;&#x5EFA;&#x8BAE;&#x653E;&#x7F6E;&#x5728;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x7684; API &#x5DE5;&#x7A0B;&#x6A21;&#x5757;&#x4E2D;&#xFF0C;&#x4EE5;&#x4FBF;&#x5176;&#x5B83;&#x5FAE;&#x670D;&#x52A1;&#x8C03;&#x7528;&#x3002;</p>
+<h4 id="&#xFF08;1&#xFF09;&#x5F15;&#x5165;-feign-&#x76F8;&#x5173;&#x4F9D;&#x8D56;">&#xFF08;1&#xFF09;&#x5F15;&#x5165; Feign &#x76F8;&#x5173;&#x4F9D;&#x8D56;</h4>
+<pre><code class="lang-xml"><span class="hljs-comment">&lt;!-- Spring Cloud OpenFeign --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.projectlombok<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>lombok<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>provided<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-openfeign<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
 </code></pre>
-<h2 id="&#x56DB;-&#x4F7F;&#x7528;">&#x56DB; &#x4F7F;&#x7528;</h2>
-<p>&#x5728; Entity &#x7C7B;&#x4E0A;&#x6DFB;&#x52A0;&#x76F8;&#x5173;&#x6CE8;&#x89E3;&#x5373;&#x53EF;</p>
-<ul>
-<li><p>@Data</p>
-<p>&#x4F1A;&#x4E3A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x81EA;&#x52A8;&#x751F;&#x6210;setter/getter&#x3001;equals&#x3001;canEqual&#x3001;hashCode&#x3001;toString&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x4E3A;final&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x4E3A;&#x8BE5;&#x5C5E;&#x6027;&#x751F;&#x6210;setter&#x65B9;&#x6CD5;&#x3002;</p>
-</li>
-<li><p>@NoArgsConstructor</p>
-<p>&#x65E0;&#x53C2;&#x6784;&#x9020;&#x5668;</p>
-</li>
-<li><p>@RequiredArgsConstructor</p>
-<p>&#x90E8;&#x5206;&#x53C2;&#x6570;&#x6784;&#x9020;&#x5668;&#x3002;Lombok&#x6CA1;&#x6CD5;&#x5B9E;&#x73B0;&#x591A;&#x79CD;&#x53C2;&#x6570;&#x6784;&#x9020;&#x5668;&#x7684;&#x91CD;&#x8F7D;&#x3002;</p>
-</li>
-<li><p>@AllArgsConstructor</p>
-<p>&#x5168;&#x53C2;&#x6784;&#x9020;&#x5668;&#x3002;</p>
-</li>
-<li><p>@Accessors</p>
-<p>Accessor&#x7684;&#x4E2D;&#x6587;&#x542B;&#x4E49;&#x662F;&#x5B58;&#x53D6;&#x5668;&#xFF0C;@Accessors&#x7528;&#x4E8E;&#x914D;&#x7F6E; getter &#x548C; setter &#x65B9;&#x6CD5;&#x7684;&#x751F;&#x6210;&#x7ED3;&#x679C;&#x3002;</p>
-<p><a href="https://projectlombok.org/features/experimental/Accessors" target="_blank">https://projectlombok.org/features/experimental/Accessors</a></p>
-<ul>
-<li><p>fluent</p>
-<p>fluent&#x7684;&#x4E2D;&#x6587;&#x542B;&#x4E49;&#x662F;&#x6D41;&#x7545;&#x7684;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;true&#xFF0C;&#x5219;getter&#x548C;setter&#x65B9;&#x6CD5;&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x90FD;&#x662F;&#x57FA;&#x7840;&#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x4E14;setter&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x3002;</p>
-<pre><code class="lang-java"><span class="hljs-meta">@Data</span>
-<span class="hljs-meta">@Accessors</span>(fluent = <span class="hljs-keyword">true</span>)
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
-    <span class="hljs-keyword">private</span> Long id;
-    <span class="hljs-keyword">private</span> String name;
+<p>&#x6B64;&#x4F9D;&#x8D56;&#x5DF2;&#x5728; tobaccocloud-framework &#x5DE5;&#x7A0B;&#x4E2D;&#x5F15;&#x5165;&#xFF0C;&#x4F9D;&#x8D56; framework &#x5219;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x590D;&#x5F15;&#x5165;</p>
+<h4 id="&#xFF08;2&#xFF09;&#x5BA2;&#x6237;&#x7AEF;&#x5F00;&#x53D1;">&#xFF08;2&#xFF09;&#x5BA2;&#x6237;&#x7AEF;&#x5F00;&#x53D1;</h4>
+<p>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.neusoft.file.feign.client;
 
-    <span class="hljs-comment">// &#x751F;&#x6210;&#x7684;getter&#x548C;setter&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF0C;&#x65B9;&#x6CD5;&#x4F53;&#x7565;</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">id</span><span class="hljs-params">()</span> </span>{}
-    <span class="hljs-function"><span class="hljs-keyword">public</span> User <span class="hljs-title">id</span><span class="hljs-params">(Long id)</span> </span>{}
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">name</span><span class="hljs-params">()</span> </span>{}
-    <span class="hljs-function"><span class="hljs-keyword">public</span> User <span class="hljs-title">name</span><span class="hljs-params">(String name)</span> </span>{}
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">import</span> org.springframework.cloud.openfeign.FeignClient;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.DeleteMapping;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.PostMapping;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestBody;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestParam;
+
+<span class="hljs-keyword">import</span> com.neusoft.framework.base.entity.FileUploadInfo;
+<span class="hljs-keyword">import</span> com.neusoft.framework.base.entity.Result;
+
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@Description</span> &#x6587;&#x4EF6;&#x5FAE;&#x670D;&#x52A1; Feign &#x5BA2;&#x6237;&#x7AEF;
+ * <span class="hljs-doctag">@author</span>         guoteng  Email:guoteng@neusoft.com
+ * <span class="hljs-doctag">@date</span>         2019&#x5E74;12&#x6708;12&#x65E5;&#x4E0A;&#x5348;9:57:32
+ */</span>
+<span class="hljs-meta">@FeignClient</span>(name = <span class="hljs-string">&quot;file-service&quot;</span>) <span class="hljs-comment">//name &#x6307;&#x5B9A;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x5728; Nacos &#x6CE8;&#x518C;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5373; spring.application.name</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">FileClientService</span> </span>{
+
+    <span class="hljs-meta">@PostMapping</span>(value = <span class="hljs-string">&quot;/file/uploadFileByModel&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Result <span class="hljs-title">uploadFileByModel</span><span class="hljs-params">(@RequestBody FileUploadInfo fileUploadInfo)</span></span>;
+
+    <span class="hljs-meta">@PostMapping</span>(value = <span class="hljs-string">&quot;/file/uploadFileByModels&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Result <span class="hljs-title">uploadFileByModels</span><span class="hljs-params">(@RequestBody List&lt;FileUploadInfo&gt; fileUploadInfos)</span></span>;
+
+    <span class="hljs-meta">@DeleteMapping</span>(value = <span class="hljs-string">&quot;/file/deleteFile&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Result <span class="hljs-title">deleteFile</span><span class="hljs-params">(@RequestParam(name = <span class="hljs-string">&quot;fileUrl&quot;</span>)</span> String fileUrl)</span>;
 }
 </code></pre>
-</li>
-<li><p>chain</p>
-<p>chain&#x7684;&#x4E2D;&#x6587;&#x542B;&#x4E49;&#x662F;&#x94FE;&#x5F0F;&#x7684;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;true&#xFF0C;&#x5219;setter&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#x3002;&#x9ED8;&#x8BA4;&#x662F;&#x5047;&#xFF0C;&#x5982;&#x679C;fluent=true&#xFF0C;&#x90A3;&#x4E48;chain&#x9ED8;&#x8BA4;&#x4E3A;&#x771F;&#x3002;</p>
-<pre><code class="lang-java"><span class="hljs-meta">@Data</span>
-<span class="hljs-meta">@Accessors</span>(chain = <span class="hljs-keyword">true</span>)
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
-    <span class="hljs-keyword">private</span> Long id;
-    <span class="hljs-keyword">private</span> String name;
+<h3 id="3-&#x8C03;&#x7528;&#x7AEF;&#x5F00;&#x53D1;">3 &#x8C03;&#x7528;&#x7AEF;&#x5F00;&#x53D1;</h3>
+<h4 id="&#xFF08;1&#xFF09;&#x5F15;&#x5165;-feign-&#x76F8;&#x5173;&#x4F9D;&#x8D56;">&#xFF08;1&#xFF09;&#x5F15;&#x5165; Feign &#x76F8;&#x5173;&#x4F9D;&#x8D56;</h4>
+<pre><code class="lang-xml"><span class="hljs-comment">&lt;!-- Spring Cloud OpenFeign --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-openfeign<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+<p>&#x6B64;&#x4F9D;&#x8D56;&#x5DF2;&#x5728; tobaccocloud-framework &#x5DE5;&#x7A0B;&#x4E2D;&#x5F15;&#x5165;&#xFF0C;&#x4F9D;&#x8D56; framework &#x5219;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x590D;&#x5F15;&#x5165;</p>
+<h4 id="&#xFF08;2&#xFF09;&#x542F;&#x52A8;&#x7C7B;&#x5F00;&#x542F;-feign">&#xFF08;2&#xFF09;&#x542F;&#x52A8;&#x7C7B;&#x5F00;&#x542F; Feign</h4>
+<pre><code class="lang-java"><span class="hljs-comment">//basePackages &#x914D;&#x7F6E; Feign &#x5BA2;&#x6237;&#x7AEF;&#x6240;&#x5728;&#x7684;&#x5305;</span>
+<span class="hljs-meta">@EnableFeignClients</span>(basePackages= {<span class="hljs-string">&quot;com.neusoft.**.feign.client&quot;</span>})
+</code></pre>
+<h4 id="&#xFF08;3&#xFF09;&#x8C03;&#x7528;">&#xFF08;3&#xFF09;&#x8C03;&#x7528;</h4>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileHandleAspect</span> </span>{
 
-    <span class="hljs-comment">// &#x751F;&#x6210;&#x7684;setter&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF0C;&#x65B9;&#x6CD5;&#x4F53;&#x7565;</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> User <span class="hljs-title">setId</span><span class="hljs-params">(Long id)</span> </span>{}
-    <span class="hljs-function"><span class="hljs-keyword">public</span> User <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>{}
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> FileClientService fileClientService;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">demo</span><span class="hljs-params">()</span></span>{
+        fileClientService.deleteFile(<span class="hljs-string">&quot;demo.txt&quot;</span>);
+    }
 }
 </code></pre>
-</li>
-<li><p>prefix</p>
-<p>prefix&#x7684;&#x4E2D;&#x6587;&#x542B;&#x4E49;&#x662F;&#x524D;&#x7F00;&#xFF0C;&#x7528;&#x4E8E;&#x751F;&#x6210;getter&#x548C;setter&#x65B9;&#x6CD5;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x4F1A;&#x5FFD;&#x89C6;&#x6307;&#x5B9A;&#x524D;&#x7F00;&#xFF08;&#x9075;&#x5B88;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#xFF09;&#x3002;&#x5982;&#x4E0B;</p>
-<pre><code class="lang-java"><span class="hljs-meta">@Data</span>
-<span class="hljs-meta">@Accessors</span>(prefix = <span class="hljs-string">&quot;p&quot;</span>)
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
-    <span class="hljs-keyword">private</span> Long pId;
-    <span class="hljs-keyword">private</span> String pName;
-
-    <span class="hljs-comment">// &#x751F;&#x6210;&#x7684;getter&#x548C;setter&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF0C;&#x65B9;&#x6CD5;&#x4F53;&#x7565;</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">getId</span><span class="hljs-params">()</span> </span>{}
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setId</span><span class="hljs-params">(Long id)</span> </span>{}
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{}
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>{}
-}
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="&#x4E94;-&#x5728;-eclipse-&#x4E2D;&#x4F7F;&#x7528;-lombak">&#x4E94; &#x5728; Eclipse &#x4E2D;&#x4F7F;&#x7528; lombak</h2>
-<ol>
-<li>&#x53CC;&#x51FB; lombok-1.16.18.jar &#x9009;&#x62E9; eclipse.exe &#x5B89;&#x88C5;</li>
-<li>&#x91CD;&#x542F; eclipse</li>
-<li>&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x9879;&#x76EE;</li>
-</ol>
 
                                 
                                 </section>
@@ -819,14 +803,10 @@
 
             
                 
-                <a href="异常.html" class="navigation navigation-prev " aria-label="Previous page: 异常">
+                <a href="多数据源.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 多数据源">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="ID 生成.html" class="navigation navigation-next " aria-label="Next page: ID 生成">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -835,7 +815,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"lombok","level":"1.3.4","depth":2,"next":{"title":"ID 生成","level":"1.3.5","depth":2,"path":"chapter/ID 生成.md","ref":"chapter/ID 生成.md","articles":[]},"previous":{"title":"异常","level":"1.3.3","depth":2,"path":"chapter/异常.md","ref":"chapter/异常.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Molln","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TobaccoCloud","gitbook":"*"},"file":{"path":"chapter/lombok.md","mtime":"2020-02-11T03:32:00.958Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-30T01:10:21.371Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Feign 微服务之间调用","level":"1.6.7","depth":2,"next":{"title":"代码迁移","level":"1.7","depth":1,"ref":"","articles":[{"title":"框架比较","level":"1.7.1","depth":2,"path":"chapter/代码迁移.md","ref":"chapter/代码迁移.md","articles":[]},{"title":"Dubbo Parent 工程迁移","level":"1.7.2","depth":2,"path":"chapter/Dubbo Parent 工程迁移.md","ref":"chapter/Dubbo Parent 工程迁移.md","articles":[]},{"title":"Dubbo API 工程迁移","level":"1.7.3","depth":2,"path":"chapter/Dubbo API 工程迁移.md","ref":"chapter/Dubbo API 工程迁移.md","articles":[]},{"title":"Dubbo Service 工程迁移","level":"1.7.4","depth":2,"path":"chapter/Dubbo Service 工程迁移.md","ref":"chapter/Dubbo Service 工程迁移.md","articles":[]},{"title":"Dubbo Web 工程迁移","level":"1.7.5","depth":2,"path":"chapter/Dubbo Web 工程迁移.md","ref":"chapter/Dubbo Web 工程迁移.md","articles":[]},{"title":"neusoft-javaee-api 迁移说明","level":"1.7.6","depth":2,"path":"chapter/neusoft-javaee-api 迁移说明.md","ref":"chapter/neusoft-javaee-api 迁移说明.md","articles":[]}]},"previous":{"title":"多数据源","level":"1.6.6","depth":2,"path":"chapter/多数据源.md","ref":"chapter/多数据源.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Molln","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TobaccoCloud","gitbook":"*"},"file":{"path":"chapter/Feign 微服务之间调用.md","mtime":"2020-03-25T08:37:50.481Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-30T01:10:21.371Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
