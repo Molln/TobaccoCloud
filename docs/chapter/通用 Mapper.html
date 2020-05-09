@@ -1,0 +1,889 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>通用 Mapper · TobaccoCloud</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Molln">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="数据校验.html" />
+    
+    
+    <link rel="prev" href="ID 生成.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    开发环境搭建
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="环境准备.html">
+            
+                <a href="环境准备.html">
+            
+                    
+                    环境准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Nacos 搭建.html">
+            
+                <a href="Nacos 搭建.html">
+            
+                    
+                    Nacos 环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    框架基础介绍
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="代码生成器.html">
+            
+                <a href="代码生成器.html">
+            
+                    
+                    代码生成器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="HTTP 请求.html">
+            
+                <a href="HTTP 请求.html">
+            
+                    
+                    HTTP 请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="异常.html">
+            
+                <a href="异常.html">
+            
+                    
+                    异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="lombok.html">
+            
+                <a href="lombok.html">
+            
+                    
+                    lombok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="ID 生成.html">
+            
+                <a href="ID 生成.html">
+            
+                    
+                    ID 生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.6" data-path="通用 Mapper.html">
+            
+                <a href="通用 Mapper.html">
+            
+                    
+                    通用 Mapper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="数据校验.html">
+            
+                <a href="数据校验.html">
+            
+                    
+                    数据校验
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    文件处理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="文件处理框架设计.html">
+            
+                <a href="文件处理框架设计.html">
+            
+                    
+                    框架设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="文件处理使用方式一.html">
+            
+                <a href="文件处理使用方式一.html">
+            
+                    
+                    使用方式一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="文件处理使用方式二.html">
+            
+                <a href="文件处理使用方式二.html">
+            
+                    
+                    使用方式二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="文件处理使用方式三.html">
+            
+                <a href="文件处理使用方式三.html">
+            
+                    
+                    使用方式三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="文件处理使用方式如何选择.html">
+            
+                <a href="文件处理使用方式如何选择.html">
+            
+                    
+                    使用方式如何选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    网关
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="网关介绍.html">
+            
+                <a href="网关介绍.html">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="网关登录.html">
+            
+                <a href="网关登录.html">
+            
+                    
+                    登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="网关鉴权.html">
+            
+                <a href="网关鉴权.html">
+            
+                    
+                    鉴权
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="网关路由转发.html">
+            
+                <a href="网关路由转发.html">
+            
+                    
+                    路由转发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="如何获取当前登录用户.html">
+            
+                <a href="如何获取当前登录用户.html">
+            
+                    
+                    如何获取当前登录用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="Redis 配置.html">
+            
+                <a href="Redis 配置.html">
+            
+                    
+                    Redis 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    最佳实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="如何编写测试类.html">
+            
+                <a href="如何编写测试类.html">
+            
+                    
+                    如何编写测试类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="日志打印.html">
+            
+                <a href="日志打印.html">
+            
+                    
+                    日志打印
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="分页查询.html">
+            
+                <a href="分页查询.html">
+            
+                    
+                    分页查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="原生 Mybatis 编码方式.html">
+            
+                <a href="原生 Mybatis 编码方式.html">
+            
+                    
+                    原生 Mybatis 编码方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="ClassUtil 工具类使用.html">
+            
+                <a href="ClassUtil 工具类使用.html">
+            
+                    
+                    ClassUtil 工具类使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="多数据源.html">
+            
+                <a href="多数据源.html">
+            
+                    
+                    多数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="Feign 微服务之间调用.html">
+            
+                <a href="Feign 微服务之间调用.html">
+            
+                    
+                    Feign 微服务之间调用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="应用启动后第一次访问缓慢.html">
+            
+                <a href="应用启动后第一次访问缓慢.html">
+            
+                    
+                    应用启动后第一次访问缓慢
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="树形数据构建.html">
+            
+                <a href="树形数据构建.html">
+            
+                    
+                    树形数据构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    代码迁移
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="代码迁移.html">
+            
+                <a href="代码迁移.html">
+            
+                    
+                    框架比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="Dubbo Parent 工程迁移.html">
+            
+                <a href="Dubbo Parent 工程迁移.html">
+            
+                    
+                    Dubbo Parent 工程迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="Dubbo API 工程迁移.html">
+            
+                <a href="Dubbo API 工程迁移.html">
+            
+                    
+                    Dubbo API 工程迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="Dubbo Service 工程迁移.html">
+            
+                <a href="Dubbo Service 工程迁移.html">
+            
+                    
+                    Dubbo Service 工程迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="Dubbo Web 工程迁移.html">
+            
+                <a href="Dubbo Web 工程迁移.html">
+            
+                    
+                    Dubbo Web 工程迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="neusoft-javaee-api 迁移说明.html">
+            
+                <a href="neusoft-javaee-api 迁移说明.html">
+            
+                    
+                    neusoft-javaee-api 迁移说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="构建新项目.html">
+            
+                <a href="构建新项目.html">
+            
+                    
+                    构建新项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >通用 Mapper</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x901A;&#x7528;-mapper">&#x901A;&#x7528; Mapper</h1>
+<h2 id="&#x4E00;-&#x5173;&#x4E8E;&#x901A;&#x7528;-mapper">&#x4E00; &#x5173;&#x4E8E;&#x901A;&#x7528; Mapper</h2>
+<p>&#x5EFA;&#x8BAE;&#x5148;&#x884C;&#x67E5;&#x770B;&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF1A;</p>
+<p><a href="https://github.com/abel533/Mapper/wiki/4.1.mappergenerator" target="_blank">https://github.com/abel533/Mapper/wiki/4.1.mappergenerator</a></p>
+<h2 id="&#x4E8C;-example-&#x7528;&#x6CD5;">&#x4E8C; Example &#x7528;&#x6CD5;</h2>
+<h3 id="1-&#x67E5;&#x8BE2;">1 &#x67E5;&#x8BE2;</h3>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// 1 &#x521B;&#x5EFA; Example &#x5BF9;&#x8C61;&#xFF0C;Country &#x4E3A;&#x5F85;&#x67E5;&#x8BE2;&#x7684;&#x5B9E;&#x4F53;&#x7C7B;</span>
+Example example = <span class="hljs-keyword">new</span> Example(Country.class);
+<span class="hljs-comment">// 2 &#x8BBE;&#x7F6E;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF1A;id &gt; 100 &#x4E14; id &lt; 151</span>
+example.createCriteria().andGreaterThan(<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-number">100</span>).andLessThan(<span class="hljs-string">&quot;id&quot;</span>,<span class="hljs-number">151</span>);
+<span class="hljs-comment">// 3 &#x8BBE;&#x7F6E;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF08;&#x4E0E;&#x7B2C;&#x4E8C;&#x6B65;&#x6784;&#x6210; or &#x5173;&#x7CFB;&#xFF09;&#xFF1A;id &lt; 41</span>
+example.or().andLessThan(<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-number">41</span>);
+<span class="hljs-comment">// 4 &#x6267;&#x884C;&#x67E5;&#x8BE2;</span>
+List&lt;Country&gt; countries = mapper.selectByExample(example);
+</code></pre>
+<p>&#x65E5;&#x5FD7;</p>
+<pre><code>DEBUG [main] - ==&gt;  Preparing: SELECT id,countryname,countrycode FROM country WHERE ( id &gt; ? and id &lt; ? ) or ( id &lt; ? ) ORDER BY id desc 
+DEBUG [main] - ==&gt; Parameters: 100(Integer), 151(Integer), 41(Integer)
+DEBUG [main] - &lt;==      Total: 90
+</code></pre><h3 id="2-&#x52A8;&#x6001;-sql">2 &#x52A8;&#x6001; SQL</h3>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// 1 &#x521B;&#x5EFA; Example &#x5BF9;&#x8C61;&#xFF0C;Country &#x4E3A;&#x5F85;&#x67E5;&#x8BE2;&#x7684;&#x5B9E;&#x4F53;&#x7C7B;</span>
+Example example = <span class="hljs-keyword">new</span> Example(Country.class);
+<span class="hljs-comment">// 2 &#x521B;&#x5EFA; &#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x5BF9;&#x8C61;</span>
+Example.Criteria criteria = example.createCriteria();
+<span class="hljs-comment">// 3 &#x5224;&#x65AD;&#x67D0;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5426;&#x4E3A; null</span>
+<span class="hljs-keyword">if</span>(query.getCountryname() != <span class="hljs-keyword">null</span>){
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF1A;countryname like &#x53C2;&#x6570;</span>
+    criteria.andLike(<span class="hljs-string">&quot;countryname&quot;</span>, query.getCountryname() + <span class="hljs-string">&quot;%&quot;</span>);
+}
+<span class="hljs-comment">// 4 &#x5224;&#x65AD;&#x67D0;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5426;&#x4E3A; null</span>
+<span class="hljs-keyword">if</span>(query.getId() != <span class="hljs-keyword">null</span>){
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF1A;id &gt; &#x6307;&#x5B9A;&#x53C2;&#x6570;</span>
+    criteria.andGreaterThan(<span class="hljs-string">&quot;id&quot;</span>, query.getId());
+}
+List&lt;Country&gt; countries = mapper.selectByExample(example);
+</code></pre>
+<p>&#x65E5;&#x5FD7;</p>
+<pre><code>DEBUG [main] - ==&gt;  Preparing: SELECT id,countryname,countrycode FROM country WHERE ( countryname like ? ) ORDER BY id desc 
+DEBUG [main] - ==&gt; Parameters: China%(String)
+DEBUG [main] - &lt;==      Total: 1
+</code></pre><h3 id="3-&#x6392;&#x5E8F;">3 &#x6392;&#x5E8F;</h3>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code class="lang-java">Example example = <span class="hljs-keyword">new</span> Example(Country.class);
+example.orderBy(<span class="hljs-string">&quot;id&quot;</span>).desc().orderBy(<span class="hljs-string">&quot;countryname&quot;</span>).orderBy(<span class="hljs-string">&quot;countrycode&quot;</span>).asc();
+List&lt;Country&gt; countries = mapper.selectByExample(example);
+</code></pre>
+<p>&#x65E5;&#x5FD7;</p>
+<pre><code>DEBUG [main] - ==&gt;  Preparing: SELECT id,countryname,countrycode FROM country order by id DESC,countryname,countrycode ASC 
+DEBUG [main] - ==&gt; Parameters: 
+DEBUG [main] - &lt;==      Total: 183
+</code></pre><h3 id="4-&#x53BB;&#x91CD;">4 &#x53BB;&#x91CD;</h3>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code class="lang-java">Example example = <span class="hljs-keyword">new</span> Example(Country.class);
+<span class="hljs-comment">//&#x8BBE;&#x7F6E; distinct</span>
+example.setDistinct(<span class="hljs-keyword">true</span>);
+example.createCriteria().andLike(<span class="hljs-string">&quot;countryname&quot;</span>, <span class="hljs-string">&quot;China%&quot;</span>);
+example.or().andIdGreaterThan(<span class="hljs-number">100</span>);
+List&lt;Country&gt; countries = mapper.selectByExample(example);
+</code></pre>
+<p>&#x65E5;&#x5FD7;</p>
+<pre><code>DEBUG [main] - ==&gt;  Preparing: SELECT distinct id,countryname,countrycode FROM country WHERE ( countryname like ? ) or ( Id &gt; ? ) ORDER BY id desc 
+DEBUG [main] - ==&gt; Parameters: A%(String), 100(Integer)
+DEBUG [main] - &lt;==      Total: 95
+</code></pre><h3 id="5-&#x8BBE;&#x7F6E;&#x67E5;&#x8BE2;&#x5217;">5 &#x8BBE;&#x7F6E;&#x67E5;&#x8BE2;&#x5217;</h3>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code class="lang-java">Example example = <span class="hljs-keyword">new</span> Example(Country.class);
+example.selectProperties(<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-string">&quot;countryname&quot;</span>);
+List&lt;Country&gt; countries = mapper.selectByExample(example);
+</code></pre>
+<p>&#x65E5;&#x5FD7;</p>
+<pre><code>DEBUG [main] - ==&gt;  Preparing: SELECT id , countryname FROM country ORDER BY id desc 
+DEBUG [main] - ==&gt; Parameters: 
+DEBUG [main] - &lt;==      Total: 183
+</code></pre><p>&#x9664;&#x4E86;&#x8FD9;&#x91CC;&#x63D0;&#x5230;&#x7684;&#x65B9;&#x6CD5;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x5176;&#x4ED6;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x770B; Example &#x6E90;&#x7801;&#x8FDB;&#x884C;&#x4E86;&#x89E3;&#x3002;</p>
+<pre><code class="lang-java">tk.mybatis.mapper.entity.Example
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ID 生成.html" class="navigation navigation-prev " aria-label="Previous page: ID 生成">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="数据校验.html" class="navigation navigation-next " aria-label="Next page: 数据校验">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"通用 Mapper","level":"1.3.6","depth":2,"next":{"title":"数据校验","level":"1.3.7","depth":2,"path":"chapter/数据校验.md","ref":"chapter/数据校验.md","articles":[]},"previous":{"title":"ID 生成","level":"1.3.5","depth":2,"path":"chapter/ID 生成.md","ref":"chapter/ID 生成.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Molln","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TobaccoCloud","gitbook":"*"},"file":{"path":"chapter/通用 Mapper.md","mtime":"2020-02-16T13:25:07.130Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-09T03:03:11.791Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
